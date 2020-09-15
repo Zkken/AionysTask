@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="87f79aff82a5232d109e41d56aef22888726b4d1" datatype="html">
+        <source>Add</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/note-form/note-form.component.js</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+        <note priority="1" from="description">An add button to create new note</note>
+        <note priority="1" from="meaning">add button</note>
+      </trans-unit>
+      <trans-unit id="472dafe6440ec48c7bd15a908ff29810493fc1ca" datatype="html">
+        <source> Text is required. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/note-form/note-form.component.js</context>
+          <context context-type="linenumber">81</context>
+        </context-group>
+        <note priority="1" from="description">text required</note>
+      </trans-unit>
+      <trans-unit id="54db455e6b83fa3fb4f430d5463a4d209e7983f1" datatype="html">
+        <source> Text&apos;s min length is 2. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/note-form/note-form.component.js</context>
+          <context context-type="linenumber">90</context>
+        </context-group>
+        <note priority="1" from="description">text&apos;s minlength</note>
+      </trans-unit>
+      <trans-unit id="c8b013e91bfee31703770ddd94b34ef27a502d52" datatype="html">
+        <source> Text&apos;s max length is 500. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/note-form/note-form.component.js</context>
+          <context context-type="linenumber">99</context>
+        </context-group>
+        <note priority="1" from="description">text&apos;s maxlength</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
