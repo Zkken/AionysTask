@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Note } from '../models/note';
 import { NoteService } from '../services/note.service';
 
@@ -11,38 +12,28 @@ export class NoteListComponent implements OnInit {
   notes: Note[]
   newNote: Note = new Note()
 
-  constructor(private noteService: NoteService) { }
-
-  ngOnInit(): void {
-    this.loadNotes();
+  constructor(private noteService: NoteService) { 
+    this.noteService.notes.subscribe(notes =>{ 
+      this.notes = notes
+    });
   }
 
-  loadNotes() {
-    this.noteService.getNotes().subscribe(result => {
-      this.notes = result;
-    })
+  ngOnInit(): void {
+    this.noteService.notes.subscribe(val => console.log(val.length));
   }
 
   onAdd() {
-    this.noteService.createNote(this.newNote).subscribe(result => {
-      this.newNote.id = result;
-      console.log(result);
-      this.notes.push(this.newNote);
-      this.newNote = new Note(); 
-    })
+    this.noteService.createNote(this.newNote);
+    this.newNote = new Note(); 
   }
 
   onEdit(note: Note) {
-    this.noteService.updateNote(note).subscribe(result => {
-      let noteEdit = this.notes.find(n => n.id == note.id);
-      noteEdit.text = note.text;
-    })
+    console.log("on edit note: ", note);
+    
+    this.noteService.updateNote(note);
   }
 
   onDelete(id: number) {
-    this.noteService.deleteNote(id).subscribe(result => {
-      let index = this.notes.findIndex(n => n.id == id);
-      this.notes.splice(index, 1);
-    })
+    this.noteService.deleteNote(id);
   }
 }

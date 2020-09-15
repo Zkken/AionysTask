@@ -29,7 +29,7 @@ namespace AionysTask.Infrastructure.Repositories
 
             await _context.SaveChangesAsync();
 
-            return note.Id;
+            return newNote.Id;
         }
 
         public async Task DeleteNoteAsync(Note note)

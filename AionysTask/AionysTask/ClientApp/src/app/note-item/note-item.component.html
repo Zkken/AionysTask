@@ -3,8 +3,7 @@
         <div class="row">
             <div class="d-flex flex-column col-8">
                 <p *ngIf="!editMode">{{note.text}}</p>
-                <app-note-form [edit]="true" [(note)]="note" *ngIf="editMode"></app-note-form>
-
+                <app-note-form [edit]="true" [(note)]="editNote" *ngIf="editMode"></app-note-form>
                 <p class="text-muted">{{note.date | date}}</p>
             </div>
             <div class="col-4">

@@ -12,14 +12,17 @@ export class NoteItemComponent implements OnInit {
   @Output() onEdit = new EventEmitter<Note>()
   @Output() onDelete = new EventEmitter<number>()
 
+  editNote: Note
   editMode = false
   faTimes = faTimes
   faEdit = faEdit
   faCheck = faCheck
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit(): void {
+   this.editNote = Object.assign({}, this.note);
   }
 
   delete() {
@@ -32,6 +35,7 @@ export class NoteItemComponent implements OnInit {
 
   save() {
     this.editMode = false;
-    this.onEdit.emit(this.note);
+
+    this.onEdit.emit(this.editNote);
   }
 }

@@ -11,7 +11,6 @@ export class NoteFormComponent implements OnInit {
   @Input() edit: boolean
   @Input() note: Note
   @Output() onAdd = new EventEmitter();
-  @Output() noteChange = new EventEmitter<Note>();
 
   noteForm = this.formBuilder.group({
     noteTextControl: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(500)]]

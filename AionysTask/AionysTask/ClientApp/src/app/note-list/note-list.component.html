@@ -3,7 +3,8 @@
     <div class="col-2"></div>
     <div class="col-4">
         <div *ngFor="let note of notes" class="d-flex flex-column">
-            <app-note-item [note]="note" (onEdit)="onEdit($event)" (onDelete)="onDelete($event)"></app-note-item>
+            <app-note-item [note]="note" 
+            (onEdit)="onEdit($event)" (onDelete)="onDelete($event)"></app-note-item>
         </div>
     </div>
     <div class="col-4">
