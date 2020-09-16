@@ -20,7 +20,7 @@ export class NoteService {
   }
 
   private loadNotes() {
-    this.client.get<Note[]>(this.baseUrl + 'notes').pipe(
+    this.client.get<Note[]>(this.baseUrl + 'api/notes').pipe(
       tap(notes => this.subject.next(notes))
     )
     .subscribe();
@@ -30,11 +30,11 @@ export class NoteService {
     let index = this.subject.value.findIndex(n => n.id === id);
     this.subject.value.splice(index, 1);
 
-    this.client.delete(this.baseUrl + 'notes/' + id).subscribe();
+    this.client.delete(this.baseUrl + 'api/notes/' + id).subscribe();
   }
 
   public createNote(note: Note): void {
-    this.client.post<number>(this.baseUrl + 'notes', note).subscribe(result => {
+    this.client.post<number>(this.baseUrl + 'api/notes', note).subscribe(result => {
       note.id = result;
       this.subject.value.push(note);
     });
@@ -52,6 +52,6 @@ export class NoteService {
     }
     findNote.text = note.text;
     
-    this.client.put(this.baseUrl + 'notes/' + note.id, note).subscribe();
+    this.client.put(this.baseUrl + 'api/notes/' + note.id, note).subscribe();
   }
 }

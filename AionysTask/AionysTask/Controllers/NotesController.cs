@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AionysTask.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class NotesController : ControllerBase
     {
