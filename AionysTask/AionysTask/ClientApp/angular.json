@@ -49,6 +49,9 @@
             },
             "ru": {
               "localize": ["ru"]
+            },
+            "en": {
+              "localize": ["en"]
             }
           }
         },
@@ -63,6 +66,9 @@
             },
             "ru": {
               "browserTarget": "AionysTask:build:ru"
+            },
+            "en": {
+              "browserTarget": "AionysTask:build:en"
             }
           }
         },
@@ -115,14 +121,15 @@
               "namedChunks": false,
               "extractLicenses": true,
               "vendorChunk": false,
-              "localize": ["en", "ru"]
+              "localize": ["ru", "en"]
             }
           }
         }
       },
       "i18n": {
         "locales": {
-          "ru": "src/locales/messages.ru.xlf"
+          "ru": "src/locales/messages.ru.xlf",
+          "en": "src/locales/messages.en.xlf"
         }
       }
     },

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Inject, Injectable } from '@angular/core';
-import { BehaviorSubject, ConnectableObservable, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { Note } from '../models/note';
 
@@ -8,15 +8,16 @@ import { Note } from '../models/note';
   providedIn: 'root'
 })
 export class NoteService {
+  private subject = new BehaviorSubject<Note[]>([]);
+
+  public notes: Observable<Note[]> = this.subject.asObservable();
+
   constructor(
     @Inject('BASE_URL') private baseUrl: string, 
     private client: HttpClient
   ) {
     this.loadNotes();
   }
-
-  private subject = new BehaviorSubject<Note[]>([]);
-  notes: Observable<Note[]> = this.subject.asObservable();
 
   private loadNotes() {
     this.client.get<Note[]>(this.baseUrl + 'notes').pipe(
@@ -25,14 +26,14 @@ export class NoteService {
     .subscribe();
   }
 
-  deleteNote(id: number): void {
+  public deleteNote(id: number): void {
     let index = this.subject.value.findIndex(n => n.id === id);
     this.subject.value.splice(index, 1);
 
     this.client.delete(this.baseUrl + 'notes/' + id).subscribe();
   }
 
-  createNote(note: Note): void {
+  public createNote(note: Note): void {
     this.client.post<number>(this.baseUrl + 'notes', note).subscribe(result => {
       note.id = result;
       this.subject.value.push(note);
