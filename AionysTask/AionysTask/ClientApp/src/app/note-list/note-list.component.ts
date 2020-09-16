@@ -19,7 +19,6 @@ export class NoteListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.noteService.notes.subscribe(val => console.log(val.length));
   }
 
   onAdd() {
@@ -28,8 +27,6 @@ export class NoteListComponent implements OnInit {
   }
 
   onEdit(note: Note) {
-    console.log("on edit note: ", note);
-    
     this.noteService.updateNote(note);
   }
 

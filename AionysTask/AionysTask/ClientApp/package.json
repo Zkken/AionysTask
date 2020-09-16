@@ -4,8 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "echo Starting... && ng serve",
-    "build": "ng build",
+    "build": "ng build --prod",
+    "extract": "ng xi18n --output-path=locale",
     "build:ssr": "ng run aionystask:server:dev",
+    "build:i18n": "npm run build -- --localize",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",

@@ -13,7 +13,7 @@ export class NoteFormComponent implements OnInit {
   @Output() onAdd = new EventEmitter();
 
   noteForm = this.formBuilder.group({
-    noteTextControl: ['', [Validators.required, Validators.minLength(1), Validators.maxLength(500)]]
+    noteTextControl: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(500)]]
   });
 
   constructor(private formBuilder: FormBuilder) { }

@@ -20,6 +20,7 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
+            "aot": true,
             "assets": ["src/assets"],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
@@ -43,7 +44,11 @@
               "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
-              "buildOptimizer": true
+              "buildOptimizer": true,
+              "localize": ["ru", "en"]
+            },
+            "ru": {
+              "localize": ["ru"]
             }
           }
         },
@@ -55,6 +60,9 @@
           "configurations": {
             "production": {
               "browserTarget": "AionysTask:build:production"
+            },
+            "ru": {
+              "browserTarget": "AionysTask:build:ru"
             }
           }
         },
@@ -88,7 +96,8 @@
           "options": {
             "outputPath": "dist-server",
             "main": "src/main.ts",
-            "tsConfig": "src/tsconfig.server.json"
+            "tsConfig": "src/tsconfig.server.json",
+            "localize": false
           },
           "configurations": {
             "dev": {
@@ -105,9 +114,15 @@
               "sourceMap": false,
               "namedChunks": false,
               "extractLicenses": true,
-              "vendorChunk": false
+              "vendorChunk": false,
+              "localize": ["en", "ru"]
             }
           }
+        }
+      },
+      "i18n": {
+        "locales": {
+          "ru": "src/locales/messages.ru.xlf"
         }
       }
     },
