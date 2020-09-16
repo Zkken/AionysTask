@@ -40,7 +40,7 @@
         ng serve -c=en
         ``` 
 
-5. Once the front end has started, within the AionysTask directory where AionysTask.csproj file is arranged (after the previous step do `cd ..`), launch the back end by running:
+5. Once the front end has started, within the AionysTask directory where AionysTask.csproj file is arranged, launch the back end by running:
 
     ```
     dotnet run
@@ -50,10 +50,18 @@
 
 7. Launch https://localhost:5001/api in your browser to view the API.
 
-8. To run the angular e2e tests, go to the ClientApp folder and execute the command:
+8. To run the angular e2e tests, go to the ClientApp folder and execute the command (for chrome binary):
 
     ```
-    ng run e2e
+    ng e2e
+    ```
+
+    #### note
+    For e2e tests, Google Chrome is used. If errors like 'chrome binary cannot be found' occurs go to protractor.conf.js file in order to establish a path directly to chrome binary (the path that in the example below is a default download path on windows 10 of the chrome browser):
+    ```
+    chromeOptions: {
+      binary: 'C:/Program Files/Google/Chrome/Application/chrome.exe'
+    }
     ```
 
 ### Web Api endpoints
