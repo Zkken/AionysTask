@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2e496b94447823a92f390ccfa16895874322a7f2" datatype="html">
+        <source>Notes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/note-list/note-list.component.html</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+        <note priority="1" from="description"> Notes list header</note>
+        <note priority="1" from="meaning">Notes </note>
+      </trans-unit>
+      <trans-unit id="a70206bee718963b2aa5a616c54f860641de82b6" datatype="html">
+        <source>
+            Note&apos;s text is required.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/note-form/note-form.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description"> Validation message</note>
+        <note priority="1" from="meaning">Note&apos;s text required </note>
+      </trans-unit>
+      <trans-unit id="155f6277d7ff87f7ecfed4a564e583f59b7548ed" datatype="html">
+        <source>
+            Note&apos;s text must be more than 2 symbols.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/note-form/note-form.component.html</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description"> Validation message</note>
+        <note priority="1" from="meaning">Note&apos;s text minlength </note>
+      </trans-unit>
+      <trans-unit id="ca3c8754b0e924e11ec171fa5bee5ea9db17d20e" datatype="html">
+        <source>
+            Note&apos;s text must be less than 500 symbols.
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/note-form/note-form.component.html</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+        <note priority="1" from="description"> Validation message</note>
+        <note priority="1" from="meaning">Note&apos;s text maxlength </note>
+      </trans-unit>
+      <trans-unit id="f600b82d3c7a5312340a45badca8e15452e703d8" datatype="html">
+        <source>Add</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/note-form/note-form.component.html</context>
+          <context context-type="linenumber">19</context>
+        </context-group>
+        <note priority="1" from="description">An add button to create new note</note>
+        <note priority="1" from="meaning">Add button</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
