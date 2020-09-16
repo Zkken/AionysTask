@@ -1,5 +1,4 @@
-# AionysTask
-## Getting started
+## AionysTask getting started
 ### Prerequisites
 1. Install the latest [.NET Core SDK](https://dotnet.microsoft.com/download)
 2. Install the latest [Node.js LTS](https://nodejs.org/en/)
@@ -11,7 +10,7 @@
     ```
 
 2. Go to the root derictory of the project and restore the packages (after the previous step do
-`cd AionysTask/AionysTask`).
+`cd AionysTask`).
 
     ```
     dotnet restore
